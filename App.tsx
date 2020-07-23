@@ -7,21 +7,23 @@ import { Linking } from "expo";
 
 const prefix = Linking.makeUrl("/");
 const config = {
-  HomeStack: {
-    path: "stack",
-    initialRouteName: "Profile",
-    screens: {
-      Home: "home",
-      Profile: {
-        path: "user/:id/:age",
-        parse: {
-          id: id => `there, ${id}`,
-          age: Number
+  screens: {
+    HomeStack: {
+      path: "stack",
+      initialRouteName: "Profile",
+      screens: {
+        Home: "home",
+        Profile: {
+          path: "user/:id/:age",
+          parse: {
+            id: id => `there, ${id}`,
+            age: Number
+          }
         }
       }
-    }
+    },
+    Settings: "settings"
   },
-  Settings: "settings"
 };
 export default function App() {
   const ref = React.useRef();
@@ -61,7 +63,7 @@ export default function App() {
         />
         <Button
           title="Go to unknown profile"
-          onPress={() => navigation.navigate("Profile")}
+          onPress={() => navigation.navigate("Profile", {})}
         />
       </View>
     );
