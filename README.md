@@ -14,8 +14,9 @@ Example of usage of deep linking for blog post in React Navigation.
 
 
 ### RUN
+```text
 xcrun simctl openurl booted exp://127.0.0.1:19000/--/stack/user/testdsd/35
 xcrun simctl openurl booted exp://127.0.0.1:19000/--/stack/
 
 https://reactnavigation.org/docs/deep-linking/
-
+```
